@@ -1,12 +1,9 @@
 
-int tempo = 1;
-int tempo_linhas = 500;
-
+int pausa = 500;
 
 void setup() {
 
-
-  pinMode(2, OUTPUT); // negativos
+  pinMode(2, OUTPUT); 
   pinMode(3, OUTPUT);
   pinMode(4, OUTPUT);
   pinMode(5, OUTPUT);
@@ -17,32 +14,40 @@ void setup() {
   pinMode(10, OUTPUT);
 
   // colunas
-  pinMode(A0, OUTPUT);
-  pinMode(A1, OUTPUT);
-  pinMode(A2, OUTPUT);
+  pinMode(A0, OUTPUT); // deve ser ligado a um resistor de 220 ohms
+  pinMode(A1, OUTPUT); // deve ser ligado a um resistor de 220 ohms
+  pinMode(A2, OUTPUT); // deve ser ligado a um resistor de 220 ohms
 
-  desliga_todos();
-}
+  desliga_todos();    // faz com que todos os leds iniciem no modo desligado
+  
+} // fim do setup
+
 
 void loop() {
 
-//teste_coluna1();
-//delay(500);
-//teste_coluna2();
-//delay(500);
-//teste_coluna3();
-//delay(500);
-//
-//teste_linhas();
-//delay(500);
-//
-//teste_padrao1();
-//delay(1000);
+  // funções definidas nos outros arquivos (ou abas na IDE  do Arduino)
+  teste_coluna1();
+  delay(pausa);
+  
+  teste_coluna2();
+  delay(pausa);
+  
+  teste_coluna3();
+  delay(pausa);
 
-teste_padrao2();
-}
+  teste_linhas();
+  delay(pausa);
 
+  teste_padrao1();
+  delay(pausa);
 
+  teste_padrao2();
+  delay(pausa);
+  
+} // fim do loop
+
+// a função abaixo desliga todos os LEDs ao mesmo tempo
+// e é utilizada dentro das outras funções.
 void desliga_todos() {
 
   digitalWrite(10, HIGH);
@@ -64,6 +69,3 @@ void desliga_todos() {
   digitalWrite(A2, LOW);
     
 }
-
-
-
