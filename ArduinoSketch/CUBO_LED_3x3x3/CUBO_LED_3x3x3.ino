@@ -1,5 +1,9 @@
 
-int pausa = 500;
+int pausa = 500;        // pausa entre cada tipo de animação
+
+// variáveis utilizadas nas funções animação:
+int tempo = 1;
+int tempo_linhas = 500;
 
 void setup() {
 
